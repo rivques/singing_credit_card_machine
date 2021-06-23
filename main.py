@@ -69,10 +69,10 @@ def rest(length, bpm):
     time.sleep(length*240/bpm)
 
 def playSong(notes, lengths, types, bpm):
-    assert len(notes) == len(lengths), "The number of notes and lengths are not the same!"
-    assert len(notes) == len(types), "The number of notes and types are not the same!"
+    assert len(notes) == len(lengths), 'The number of notes and lengths are not the same!'
+    assert len(notes) == len(types), 'The number of notes and types are not the same!'
     for i, note in enumerate(notes):
-        if note in ["", "rs", "RS", "rest", "REST"]:
+        if note in ['', 'rs', 'RS', 'rest', 'REST']:
             rest(lengths[i], bpm)
         else:
             if types[i][1] in ['s', 'S']:
@@ -83,36 +83,48 @@ def playSong(notes, lengths, types, bpm):
                 rest(lengths[i]-noteLength, bpm)
 
 songs = {
-    "In The Hall of the Mountain King": {
-        "bpm": 120,
-        "notes": ["D4", "E4", 'F4', 'G4', 'A4', 'F4', 'A4', 'G#4', 'E4', 'G#4', 'G4', 'D#4', 'G4', "D4", "E4", 'F4', 'G4', 'A4', 'F4', 'A4', 'D5', 'C5', 'A4', 'F4', 'A4', 'C5'], 
-        "lengths": [1/8, 1/8,  1/8,  1/8,  1/8,  1/8,  1/4,   1/8,  1/8,   1/4,  1/8,   1/8,  1/4,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/2],
-        "types": ['.X', '.X', '.X', '.X', '.X', '.X', '.X',  '.X', '.X',  '.X', '.X',  '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X']
+    'In The Hall of the Mountain King': {
+        'bpm': 120,
+        'notes': ['D4', 'E4', 'F4', 'G4', 'A4', 'F4', 'A4', 'G#4', 'E4', 'G#4', 'G4', 'D#4', 'G4', 'D4', 'E4', 'F4', 'G4', 'A4', 'F4', 'A4', 'D5', 'C5', 'A4', 'F4', 'A4', 'C5'], 
+        'lengths': [1/8, 1/8,  1/8,  1/8,  1/8,  1/8,  1/4,   1/8,  1/8,   1/4,  1/8,   1/8,  1/4,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/8,  1/2],
+        'types': ['.X', '.X', '.X', '.X', '.X', '.X', '.X',  '.X', '.X',  '.X', '.X',  '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.X']
     },
-    "Twinkle Twinkle Little Star": {
-        "bpm": 60,
-        "notes": ["C4", 'C4', 'G4', 'G4'],
-        "lengths": [1/4, 1/4,  1/4,  1/4],
-        "types": ['.X', '.X', '.X', '.X']
+    'Twinkle Twinkle Little Star': {
+        'bpm': 60,
+        'notes': ['C4', 'C4', 'G4', 'G4'],
+        'lengths': [1/4, 1/4,  1/4,  1/4],
+        'types': ['.X', '.X', '.X', '.X']
     },
-    "Once Upon A Time": {
-        "bpm": 131,
-        "notes": ["C4", 'C5', 'F4',  'C4', 'F4', 'F3', 'C4', 'F4', 'C5', 'D5', 'C5', 'G4', 'F4', 'A#3', 'B3', 'C4', 'RS', 'C5', 'A4', 'G4', 'F4', 'E4', 'F4', 'G4', 'RS', 'E5', 'D5', 'C#5', 'C5', 'D4', 'D4', 'D4', 'C5', 'A4', 'G4', 'F4', 'G4', 'A4', 'E4', 'RS', 'G4', 'RS', 'G4', 'F4', 'D4', 'E4', 'C4'],
-        "lengths": [1/2, 1/2,    1,   1/2,  1/2,    1,  1/2,  1/2,  1/2,  1/2,  1/2,  1/2,    1,  1/16, 1/16,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  3/8, 1/16,  1/16,    1,  1/4,  1/8,  1/8,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4],
-        "types": ['.S', '.S', '.S',  '.S', '.S', '.X', '.S', '.S', '.S', '.S', '.S', '.S', '.X',  '.S', '.S', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.X', '.X', '.X', '.S', '.S',  '.S', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.X', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.S', '.X']
-    }
+    'Once Upon A Time': {
+        'bpm': 131, #                                                                                                                                                                                                                                                                                               0:49                                                        0:53
+        'notes': ['C4', 'C5', 'F4',  'C4', 'F4', 'F3', 'C4', 'F4', 'C5', 'D5', 'C5', 'G4', 'F4', 'A#3', 'B3', 'C4', 'RS', 'C5', 'A4', 'G4', 'F4', 'E4', 'F4', 'G4', 'RS', 'E5', 'D5', 'C#5', 'C5', 'D4', 'D4', 'D4', 'C5', 'A4', 'G4', 'F4', 'G4', 'A4', 'E4', 'RS', 'G4', 'RS', 'G4', 'F4', 'E4', 'F4', 'C4', 'RS', 'C5', 'A4', 'G4', 'F4', 'E4', 'F4', 'G4', 'RS', 'E5', 'RS', 'D5', 'C#5', 'C5'],
+        'lengths': [1/2, 1/2,    1,   1/2,  1/2,    1,  1/2,  1/2,  1/2,  1/2,  1/2,  1/2,    1,  1/16, 1/16,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  3/8, 1/16,  1/16,    1,  1/4,  1/8,  1/8,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4,  1/4, 1/16,  1/16,  3/8],
+        'types': ['.S', '.S', '.S',  '.S', '.S', '.X', '.S', '.S', '.S', '.S', '.S', '.S', '.X',  '.S', '.S', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.X', '.X', '.X', '.S', '.S',  '.S', '.X', '.X', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.X', '.X', '.X', '.X', '.X', '.X', '.S', '.S', '.X', '.S', '.X', '.X', '.X', '.X', '.S', '.S', '.S', '.S', '.X', '.S', '.X', '.S',  '.S', '.X']
+    },
+    'Hopes and Dreams': {
+        'bpm': 171,
+        'notes': ['F5', 'RS', 'F6', 'RS', 'C6', 'RS', 'A#5', 'RS', 'F6', 'RS', 'F5', 'RS'],
+        'lengths': [1/8, 3/8,  1/8,  3/8,  1/8,  7/8,   1/8,  3/8,  1/8,  3/8,  1/8,  7/8],
+        'types': ['.S', '.X', '.S', '.X', '.S', '.X',  '.S', '.X', '.S', '.X', '.S', '.X', ]
+    },
+    'MEGALOVANIA': {
+        'bpm': 120,
+        'notes': [],
+        'lengths': [],
+        'types': []
+    },
 }
 
 def main():
     while True:
-        print("\nWhich song would you like to hear? We have:\n")
+        print('\nWhich song would you like to hear? We have:\n')
         for i, key in enumerate(songs.keys()):
             print(f'{i}: {key}')
-        song_num = int(input("\nEnter a number: "))
+        song_num = int(input('\nEnter a number: '))
         song = songs[list(songs.keys())[song_num]]
         time.sleep(1.5)
-        playSong(song["notes"], song["lengths"], song["types"], song["bpm"])
+        playSong(song['notes'], song['lengths'], song['types'], song['bpm'])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

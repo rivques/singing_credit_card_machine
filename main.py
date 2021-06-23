@@ -1,5 +1,5 @@
 import time
-from gpiozero import DigitalOutputDevice
+from gpiozero import DigitalOutputDevice # pyright: reportMissingImports=false
 
 enable_pin = DigitalOutputDevice(18)
 coil_A_1_pin = DigitalOutputDevice(4)
